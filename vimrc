@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+:imap jj <Esc>
+
 set t_Co=256
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
