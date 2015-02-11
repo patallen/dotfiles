@@ -14,6 +14,7 @@ Plugin 'L9'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,3 +61,14 @@ set ruler
 set wildignore=*.swp,*.bak,js_cache*,css_cache*,*.tpl.php,data_cache*,CodeCoverage,*.pyc
 set wildmode=longest,list
 set clipboard=unnamedplus,unnamed,autoselect,exclude:cons\|linux
+
+" NERDTree settings
+" Open NERDTree automatically if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" CTRL+n to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+" Close vim if only NERDTree is left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+hi Directory ctermfg=0 ctermbg=none
