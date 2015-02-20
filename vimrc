@@ -15,7 +15,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'godlygeek/tabular'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -72,4 +75,15 @@ map <C-n> :NERDTreeToggle<CR>
 " Close vim if only NERDTree is left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-hi Directory ctermfg=0 ctermbg=none
+"hi Directory ctermfg=0 ctermbg=none
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+let g:syntastic_mode_map = { 'mode': 'passive',     
+                          \ 'active_filetypes': [],     
+                          \ 'passive_filetypes': [] } 
+let g:syntastic_auto_loc_list=1     
+nnoremap <silent> <F5> :SyntasticCheck<CR>
