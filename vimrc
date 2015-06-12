@@ -8,17 +8,18 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'L9'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'scrooloose/nerdtree'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
+Plugin 'L9'
+Plugin 'nvie/vim-flake8'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,3 +88,4 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                           \ 'passive_filetypes': [] } 
 let g:syntastic_auto_loc_list=1     
 nnoremap <silent> <F5> :SyntasticCheck<CR>
+
