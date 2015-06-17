@@ -66,6 +66,7 @@ set ruler
 set wildignore=*.swp,*.bak,js_cache*,css_cache*,*.tpl.php,data_cache*,CodeCoverage,*.pyc
 set wildmode=longest,list
 set clipboard=unnamedplus,unnamed,autoselect,exclude:cons\|linux
+set relativenumber
 
 " NERDTree settings
 " Open NERDTree automatically if no files were specified
