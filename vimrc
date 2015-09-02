@@ -20,6 +20,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/AutoClose'
+Plugin 'Shutnik/jshint2.vim'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -28,7 +32,7 @@ filetype plugin indent on    " required
 set laststatus=2
 let g:airline_powerline_fonts = 1
 
-colorscheme sorcerer 
+colorscheme badwolf
 
 syntax on
 filetype plugin indent on
@@ -79,10 +83,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 "hi Directory ctermfg=0 ctermbg=none
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
 let g:syntastic_mode_map = { 'mode': 'passive',     
                           \ 'active_filetypes': [],     
@@ -90,3 +94,11 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_auto_loc_list=1     
 nnoremap <silent> <F5> :SyntasticCheck<CR>
 
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
+
+" Highlight trailing whitespace
+:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+:match ExtraWhitespace /\s\+$/
