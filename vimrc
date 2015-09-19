@@ -81,6 +81,7 @@ map <C-n> :NERDTreeToggle<CR>
 " Close vim if only NERDTree is left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+
 "hi Directory ctermfg=0 ctermbg=none
 
 " nnoremap <C-J> <C-W><C-J>
@@ -88,10 +89,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " nnoremap <C-L> <C-W><C-L>
 " nnoremap <C-H> <C-W><C-H>
 
-let g:syntastic_mode_map = { 'mode': 'passive',     
-                          \ 'active_filetypes': [],     
-                          \ 'passive_filetypes': [] } 
-let g:syntastic_auto_loc_list=1     
+let g:syntastic_mode_map = { 'mode': 'active',
+                          \ 'active_filetypes': [],
+                          \ 'passive_filetypes': [] }
+let g:syntastic_auto_loc_list=1
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_validator_exec= ['tidy']
 nnoremap <silent> <F5> :SyntasticCheck<CR>
 
 :set guioptions-=m  "remove menu bar
@@ -102,3 +105,20 @@ nnoremap <silent> <F5> :SyntasticCheck<CR>
 " Highlight trailing whitespace
 :highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 :match ExtraWhitespace /\s\+$/
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  " (must install the_silver_searcher)
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+set colorcolumn=80
+set cursorline
+" "hi CursorLine term=underline cterm=underline  ctermfg=none ctermbg=none
