@@ -21,7 +21,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/AutoClose'
+Plugin 'Raimondi/delimitMate'
+"Plugin 'vim-scripts/AutoClose'
 Plugin 'Shutnik/jshint2.vim'
 Plugin 'mattn/emmet-vim'
 
@@ -64,7 +65,7 @@ set noswapfile
 set fileformats=unix,dos,mac
 set laststatus=2
 set nolist
-set noexpandtab
+set expandtab
 set softtabstop=4 tabstop=4 shiftwidth=4
 set ruler
 set wildignore=*.swp,*.bak,js_cache*,css_cache*,*.tpl.php,data_cache*,CodeCoverage,*.pyc
@@ -121,4 +122,5 @@ endif
 
 set colorcolumn=80
 set cursorline
-" "hi CursorLine term=underline cterm=underline  ctermfg=none ctermbg=none
+
+set showmatch
