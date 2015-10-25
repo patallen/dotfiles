@@ -58,12 +58,9 @@ set novisualbell
 set noerrorbells
 set ttyfast
 set mouse=
-set nocompatible
 set backup
-set backupdir=~/.vim_backup
 set noswapfile
 set fileformats=unix,dos,mac
-set laststatus=2
 set nolist
 set expandtab
 set softtabstop=4 tabstop=4 shiftwidth=4
@@ -72,6 +69,9 @@ set wildignore=*.swp,*.bak,js_cache*,css_cache*,*.tpl.php,data_cache*,CodeCovera
 set wildmode=longest,list
 set clipboard=unnamedplus,unnamed,autoselect,exclude:cons\|linux
 set relativenumber
+set colorcolumn=80
+set cursorline
+set showmatch
 
 " NERDTree settings
 " Open NERDTree automatically if no files were specified
@@ -82,13 +82,6 @@ map <C-n> :NERDTreeToggle<CR>
 " Close vim if only NERDTree is left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-
-"hi Directory ctermfg=0 ctermbg=none
-
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
 
 let g:syntastic_mode_map = { 'mode': 'active',
                           \ 'active_filetypes': [],
@@ -119,8 +112,3 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-set colorcolumn=80
-set cursorline
-
-set showmatch
