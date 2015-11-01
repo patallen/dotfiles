@@ -58,8 +58,13 @@ set novisualbell
 set noerrorbells
 set ttyfast
 set mouse=
+
 set backup
-set noswapfile
+set backupdir=~/.vim_backup//
+
+set swapfile
+set directory=~/.vim_swap//
+
 set fileformats=unix,dos,mac
 set nolist
 set expandtab
