@@ -3,6 +3,14 @@ filetype off                  " required
 
 :imap jj <Esc>
 
+let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
+      \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints$',
+      \ '__pycache__',
+      \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
+      \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$',
+      \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
+      \ '\.env-pypy$']
+
 set t_Co=256
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
