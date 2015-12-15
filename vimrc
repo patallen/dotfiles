@@ -28,9 +28,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
-"Plugin 'vim-scripts/AutoClose'
+" Plugin 'vim-scripts/AutoClose'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shutnik/jshint2.vim'
 Plugin 'mattn/emmet-vim'
 
@@ -40,6 +41,8 @@ filetype plugin indent on    " required
 
 set laststatus=2
 let g:airline_powerline_fonts = 1
+
+let g:syntastic_loc_list_height = 5
 
 colorscheme badwolf
 
@@ -67,11 +70,9 @@ set noerrorbells
 set ttyfast
 set mouse=
 
+set noswapfile
 set backup
 set backupdir=~/.vim_backup//
-
-set swapfile
-set directory=~/.vim_swap//
 
 set fileformats=unix,dos,mac
 set nolist
