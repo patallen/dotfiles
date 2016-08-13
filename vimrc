@@ -129,3 +129,7 @@ if executable('ag')
 endif
 
 autocmd FileType python setlocal completeopt-=preview
+
+set exrc
+set secure
+
